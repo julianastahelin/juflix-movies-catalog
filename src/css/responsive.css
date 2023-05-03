@@ -1,0 +1,307 @@
+@media (max-width: 1174px) {
+    .poster {
+        width: 230px;
+        height: 300px;
+    }
+
+}
+
+@media (max-width: 1086px) {
+    .poster {
+        width: 250px;
+        height: 327px;
+    }
+
+    .home-page-section ul {
+        max-width: 80%;
+        justify-content: center;
+        gap: 20px;
+        align-self: center;
+    }
+
+    .movies-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .arrow-btn.previous-btn {
+        left: 8%;
+    }
+    
+    .arrow-btn.next-btn {
+        right: 8%;
+    }
+}
+
+@media (max-width: 990px) {
+    .arrow-btn.previous-btn {
+        left: 5%;
+    }
+    
+    .arrow-btn.next-btn {
+        right: 5%;
+    }
+}
+
+@media (max-width: 930px) {
+    .arrow-btn.previous-btn {
+        left: 3%;
+    }
+    
+    .arrow-btn.next-btn {
+        right: 3%;
+    }
+}
+
+@media (max-width: 900px) {
+    .arrow-btn.previous-btn {
+        left: 1%;
+    }
+    
+    .arrow-btn.next-btn {
+        right: 1%;
+    }
+}
+
+@media (max-width: 860px) {
+    .home-page-section ul {
+        max-width: 85%;
+    }
+}
+
+@media (max-width: 820px) {
+    .arrow-btn.previous-btn {
+        left: 0%;
+    }
+    
+    .arrow-btn.next-btn {
+        right: 0%;
+    }
+}
+
+@media (max-width: 786px) {
+    .arrow-btn.previous-btn {
+        left: -1%;
+    }
+    
+    .arrow-btn.next-btn {
+        right: -1%;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-page-section ul {
+        max-width: 90%;
+        gap: 14px;
+    }
+
+    .poster {
+        width: 230px;
+        height: 300px;
+    }
+
+    .arrow-btn.previous-btn {
+        left: 0%;
+    }
+    
+    .arrow-btn.next-btn {
+        right: 0%;
+    }
+}
+
+@media (max-width: 700px) {
+    .arrow-btn.previous-btn {
+        left: -3%;
+    }
+    
+    .arrow-btn.next-btn {
+        right: -3%;
+    }
+}
+
+@media (max-width: 660px) {
+    .home-page-section ul {
+        flex-wrap: nowrap;
+        flex-direction: row;
+        max-width: 100%;
+        gap: 20px;
+    }
+
+    .poster {
+        width: 210px;
+        height: 274px;
+    }
+
+    .movie-3,
+    .movie-4 {
+        display: none;
+    }
+
+    .arrow-btn {
+        width: 20px;
+        height: 40px;
+    }
+    .arrow-btn.previous-btn {
+        left: -8%;
+    }
+    .arrow-btn.next-btn {
+        right: -8%;
+    }
+
+}
+
+@media (max-width: 570px) {
+    .poster {
+        width: 180px;
+        height: 235px;
+    }
+
+    .arrow-btn.previous-btn {
+        left: -10%;
+    }
+
+    .arrow-btn.next-btn {
+        right: -10%;
+    }
+
+}
+
+@media (max-width: 510px) {
+    .poster {
+        width: 160px;
+        height: 209px;
+    }
+
+    .arrow-btn {
+        width: 17px;
+        height: 34px;
+    }
+}
+
+@media (max-width: 460px) {
+    .poster {
+        width: 150px;
+        height: 196px;
+    }
+
+    .home-page-section ul {
+        gap: 14px;
+    }
+
+    .navigation-bar .container {
+        flex-direction: column;
+    }
+
+    .search-form input {
+        width: 300px;
+        padding: 4.5%;
+        font-size: 16px;
+    }
+
+    .search-form .submit-search {
+        font-size: 16px;
+    }
+
+    .home-button i {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 426px) {
+    .poster {
+        width: 130px;
+        height: 170px;
+    }
+
+    .home-page-section ul {
+        gap: 12px;
+    }
+
+    .arrow-btn.previous-btn {
+        left: -13%;
+    }
+
+    .arrow-btn.next-btn {
+        right: -13%;
+    }
+}
+
+@media (max-width: 375px) {
+    .arrow-btn.previous-btn {
+        left: -13%;
+    }
+
+    .arrow-btn.next-btn {
+        right: -13%;
+    }
+}
+
+@media (max-width: 360px) {
+    .home-page-section ul {
+        gap: 5px;
+    }
+
+    .navigation-bar .container {
+        gap: 15px;
+    }
+
+    .arrow-btn {
+        width: 15px;
+        height: 30px;
+    }
+
+    .arrow-btn.previous-btn {
+        left: -10%;
+    }
+
+    .arrow-btn.next-btn {
+        right: -10%;
+    }
+
+    .search-form input {
+        width: 270px;
+        padding: 5%;
+        font-size: 18px;
+    }
+
+    .search-form .submit-search {
+        font-size: 17px;
+    }
+
+    .home-button i {
+        font-size: 17px;
+    }
+
+    .home-page-section h3,
+    .genre-and-search-section h3 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 340px) {
+    .poster {
+        width: 120px;
+        height: 156px;
+    }
+
+    .home-page-section ul {
+        gap: 5px;
+    }
+
+    .navigation-bar .container {
+        gap: 15px;
+    }
+
+    .arrow-btn {
+        width: 13px;
+        height: 26px;
+    }
+
+    .arrow-btn.previous-btn {
+        left: -10%;
+    }
+
+    .arrow-btn.next-btn {
+        right: -10%;
+    }
+}

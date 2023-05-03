@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juflix - Catalog of movies</title>
+
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
+
+    <script src="https://kit.fontawesome.com/6e58d9e2c9.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="top-header">
+        <h1>Juflix</h1>
+        <p>Catalog of movies</p>
+        <a href="#main">Browse</a>
+        <!-- ver se coloco o p com link mesmo ou se coloco um button. ver como é melhor pra animar essa rolagem. acho que fiz rolagem no tindog, da pra ver o codigo. -->
+    </header>
+
+    <main id="main">
+        <header class="main-header">
+            <h2>Juflix</h2>
+            <p>Catalog of movies</p>
+            <!-- <hr> -->
+
+            <nav class="navigation-bar">
+                <div class="container">
+                    <button class="home-button"><i class="fa-solid fa-house"></i></button>
+                    <form action="" class="search-form">
+                        <input type="text" placeholder="Search here">
+                        <button type="submit" class="submit-search"><i
+                                class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+
+                <ul class="navigation-categories">
+                    <li id="top-rated-movies" class="genre-button">Top rated movies</li>
+                    <li id="action" class="genre-button">Action</li>
+                    <li id="animation" class="genre-button">Animation</li>
+                    <li id="comedy" class="genre-button">Comedy</li>
+                    <li id="documentary" class="genre-button">Documentary</li>
+                    <li id="drama" class="genre-button">Drama</li>
+                    <li id="mystery" class="genre-button">Mystery</li>
+                    <li id="romance" class="genre-button">Romance</li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="home-page-section">
+
+            <div class="movies-container" data-anime="up">
+                <h3 id="top-rated-movies-title">Top rated movies</h3>
+                <ul class="titles-container">
+
+                    <img src="src/images/previous-btn-arrow.png" alt="previous button"
+                        class="arrow-btn previous-btn inactive" id="previous-top-rated-movie">
+              
+                    <li>
+                        <div class="poster poster-top-rated-movie"></div>
+                        <p class="year year-top-rated-movie"></p>
+                        <p class="name name-top-rated-movie"></p>
+                    </li>
+                    <li class="movie-2">
+                        <div class="poster poster-top-rated-movie"></div>
+                        <p class="year year-top-rated-movie"></p>
+                        <p class="name name-top-rated-movie"></p>
+                    </li>
+                    <li class="movie-3">
+                        <div class="poster poster-top-rated-movie"></div>
+                        <p class="year year-top-rated-movie"></p>
+                        <p class="name name-top-rated-movie"></p>
+                    </li>
+                    <li class="movie-4">
+                        <div class="poster poster-top-rated-movie"></div>
+                        <p class="year year-top-rated-movie"></p>
+                        <p class="name name-top-rated-movie"></p>
+                    </li>
+            
+                    <img src="src/images/next-btn-arrow.png" alt="next button" class="arrow-btn next-btn"
+                        id="next-top-rated-movie">
+               
+                </ul>
+            </div>
+
+            <div class="movies-container" data-anime="up">
+                <h3 id="action-title">Action</h3>
+                <ul>
+                    <img src="src/images/previous-btn-arrow.png" alt="previous button"
+                        class="arrow-btn previous-btn inactive" id="previous-action">
+
+                    <li>
+                        <div class="poster poster-action"></div>
+                        <p class="year year-action"></p>
+                        <p class="name name-action"></p>
+                    </li>
+                    <li class="movie-2">
+                        <div class="poster poster-action"></div>
+                        <p class="year year-action"></p>
+                        <p class="name name-action"></p>
+                    </li>
+                    <li class="movie-3">
+                        <div class="poster poster-action"></div>
+                        <p class="year year-action"></p>
+                        <p class="name name-action"></p>
+                    </li>
+                    <li class="movie-4">
+                        <div class="poster poster-action"></div>
+                        <p class="year year-action"></p>
+                        <p class="name name-action"></p>
+                    </li>
+
+                    <img src="src/images/next-btn-arrow.png" alt="next button" class="arrow-btn next-btn"
+                        id="next-action">
+                </ul>
+            </div>
+
+            <div class="movies-container" data-anime="up">
+                <h3 id="animation-title">Animation</h3>
+                <ul>
+                    <img src="src/images/previous-btn-arrow.png" alt="previous button"
+                        class="arrow-btn previous-btn inactive" id="previous-animation">
+
+                    <li>
+                        <div class="poster poster-animation"></div>
+                        <p class="year year-animation"></p>
+                        <p class="name name-animation"></p>
+                    </li>
+                    <li class="movie-2">
+                        <div class="poster poster-animation"></div>
+                        <p class="year year-animation"></p>
+                        <p class="name name-animation"></p>
+                    </li>
+                    <li class="movie-3">
+                        <div class="poster poster-animation"></div>
+                        <p class="year year-animation"></p>
+                        <p class="name name-animation"></p>
+                    </li>
+                    <li class="movie-4">
+                        <div class="poster poster-animation"></div>
+                        <p class="year year-animation"></p>
+                        <p class="name name-animation"></p>
+                    </li>
+
+                    <img src="src/images/next-btn-arrow.png" alt="next button" class="arrow-btn next-btn"
+                        id="next-animation">
+                </ul>
+            </div>
+
+            <div class="movies-container" data-anime="up">
+                <h3 id="comedy-title">Comedy</h3>
+                <ul>
+                    <img src="src/images/previous-btn-arrow.png" alt="previous button"
+                        class="arrow-btn previous-btn inactive" id="previous-comedy">
+
+                    <li>
+                        <div class="poster poster-comedy"></div>
+                        <p class="year year-comedy"></p>
+                        <p class="name name-comedy"></p>
+                    </li>
+                    <li class="movie-2">
+                        <div class="poster poster-comedy"></div>
+                        <p class="year year-comedy"></p>
+                        <p class="name name-comedy"></p>
+                    </li>
+                    <li class="movie-3">
+                        <div class="poster poster-comedy"></div>
+                        <p class="year year-comedy"></p>
+                        <p class="name name-comedy"></p>
+                    </li>
+                    <li class="movie-4">
+                        <div class="poster poster-comedy"></div>
+                        <p class="year year-comedy"></p>
+                        <p class="name name-comedy"></p>
+                    </li>
+
+                    <img src="src/images/next-btn-arrow.png" alt="next button" class="arrow-btn next-btn"
+                        id="next-comedy">
+                </ul>
+            </div>
+
+            <div class="movies-container" data-anime="up">
+                <h3 id="documentary-title">Documentary</h3>
+                <ul>
+                    <img src="src/images/previous-btn-arrow.png" alt="previous button"
+                        class="arrow-btn previous-btn inactive" id="previous-documentary">
+
+                    <li>
+                        <div class="poster poster-documentary"></div>
+                        <p class="year year-documentary"></p>
+                        <p class="name name-documentary"></p>
+                    </li>
+                    <li class="movie-2">
+                        <div class="poster poster-documentary"></div>
+                        <p class="year year-documentary"></p>
+                        <p class="name name-documentary"></p>
+                    </li>
+                    <li class="movie-3">
+                        <div class="poster poster-documentary"></div>
+                        <p class="year year-documentary"></p>
+                        <p class="name name-documentary"></p>
+                    </li>
+                    <li class="movie-4">
+                        <div class="poster poster-documentary"></div>
+                        <p class="year year-documentary"></p>
+                        <p class="name name-documentary"></p>
+                    </li>
+
+                    <img src="src/images/next-btn-arrow.png" alt="next button" class="arrow-btn next-btn"
+                        id="next-documentary">
+                </ul>
+            </div>
+
+            <div class="movies-container" data-anime="up">
+                <h3 id="drama-title">Drama</h3>
+                <ul>
+                    <img src="src/images/previous-btn-arrow.png" alt="previous button"
+                        class="arrow-btn previous-btn inactive" id="previous-drama">
+
+                    <li>
+                        <div class="poster poster-drama"></div>
+                        <p class="year year-drama"></p>
+                        <p class="name name-drama"></p>
+                    </li>
+                    <li class="movie-2">
+                        <div class="poster poster-drama"></div>
+                        <p class="year year-drama"></p>
+                        <p class="name name-drama"></p>
+                    </li>
+                    <li class="movie-3">
+                        <div class="poster poster-drama"></div>
+                        <p class="year year-drama"></p>
+                        <p class="name name-drama"></p>
+                    </li>
+                    <li class="movie-4">
+                        <div class="poster poster-drama"></div>
+                        <p class="year year-drama"></p>
+                        <p class="name name-drama"></p>
+                    </li>
+
+                    <img src="src/images/next-btn-arrow.png" alt="next button" class="arrow-btn next-btn"
+                        id="next-drama">
+                </ul>
+            </div>
+
+            <div class="movies-container" data-anime="up">
+                <h3 id="mystery-title">Mystery</h3>
+                <ul>
+                    <img src="src/images/previous-btn-arrow.png" alt="previous button"
+                        class="arrow-btn previous-btn inactive" id="previous-mystery">
+
+                    <li>
+                        <div class="poster poster-mystery"></div>
+                        <p class="year year-mystery"></p>
+                        <p class="name name-mystery"></p>
+                    </li>
+                    <li class="movie-2">
+                        <div class="poster poster-mystery"></div>
+                        <p class="year year-mystery"></p>
+                        <p class="name name-mystery"></p>
+                    </li>
+                    <li class="movie-3">
+                        <div class="poster poster-mystery"></div>
+                        <p class="year year-mystery"></p>
+                        <p class="name name-mystery"></p>
+                    </li>
+                    <li class="movie-4">
+                        <div class="poster poster-mystery"></div>
+                        <p class="year year-mystery"></p>
+                        <p class="name name-mystery"></p>
+                    </li>
+
+                    <img src="src/images/next-btn-arrow.png" alt="next button" class="arrow-btn next-btn"
+                        id="next-mystery">
+                </ul>
+            </div>
+
+            <div class="movies-container" data-anime="up">
+                <h3 id="romance-title">Romance</h3>
+                <ul>
+                    <img src="src/images/previous-btn-arrow.png" alt="previous button"
+                        class="arrow-btn previous-btn inactive" id="previous-romance">
+
+                    <li>
+                        <div class="poster poster-romance"></div>
+                        <p class="year year-romance"></p>
+                        <p class="name name-romance"></p>
+                    </li>
+                    <li class="movie-2">
+                        <div class="poster poster-romance"></div>
+                        <p class="year year-romance"></p>
+                        <p class="name name-romance"></p>
+                    </li>
+                    <li class="movie-3">
+                        <div class="poster poster-romance"></div>
+                        <p class="year year-romance"></p>
+                        <p class="name name-romance"></p>
+                    </li>
+                    <li class="movie-4">
+                        <div class="poster poster-romance"></div>
+                        <p class="year year-romance"></p>
+                        <p class="name name-romance"></p>
+                    </li>
+
+                    <img src="src/images/next-btn-arrow.png" alt="next button" class="arrow-btn next-btn"
+                        id="next-romance">
+                </ul>
+            </div>
+
+        </section>
+
+        <section class="genre-and-search-section hide">
+            <div class="by-genre-container">
+                <div class="by-genre-header">
+                    <h3 class="category-name" id="genre-and-search-section-title"></h3>
+
+                    <div class="go-to-page-container">
+                        <p>Page <span class="current-page-title">1</span></p>
+                        <form action="" class="go-to-page-form">
+                            <input type="text" placeholder="Go to page...">
+                            <button type="submit" class="submit-search"><img src="src/images/go-to-page-btn.png"
+                                    alt="go to page button" class="go-to-page-btn"></button>
+                        </form>
+                        <button class="previous-page-btn inactive"><img src="src/images/go-to-page-btn.png"
+                                alt="previous page button"></button>
+                        <button class="next-page-btn"><img src="src/images/go-to-page-btn.png"
+                                alt="next page button"></button>
+                    </div>
+
+                </div>
+
+                <ul class="titles-container">
+                    <li>
+                        <div class="poster poster-genre-search"></div>
+                        <p class="year year-genre-search"></p>
+                        <p class="name name-genre-search"></p>
+                    </li>
+                    <li>
+                        <div class="poster poster-genre-search"></div>
+                        <p class="year year-genre-search"></p>
+                        <p class="name name-genre-search"></p>
+                    </li>
+                    <li>
+                        <div class="poster poster-genre-search"></div>
+                        <p class="year year-genre-search"></p>
+                        <p class="name name-genre-search"></p>
+                    </li>
+                    <li>
+                        <div class="poster poster-genre-search"></div>
+                        <p class="year year-genre-search"></p>
+                        <p class="name name-genre-search"></p>
+                    </li>
+                    <li>
+                        <div class="poster poster-genre-search"></div>
+                        <p class="year year-genre-search"></p>
+                        <p class="name name-genre-search"></p>
+                    </li>
+                    <li>
+                        <div class="poster poster-genre-search"></div>
+                        <p class="year year-genre-search"></p>
+                        <p class="name name-genre-search"></p>
+                    </li>
+                    <li>
+                        <div class="poster poster-genre-search"></div>
+                        <p class="year year-genre-search"></p>
+                        <p class="name name-genre-search"></p>
+                    </li>
+                    <li>
+                        <div class="poster poster-genre-search"></div>
+                        <p class="year year-genre-search"></p>
+                        <p class="name name-genre-search"></p>
+                    </li>
+                    <li>
+                        <div class="poster poster-genre-search"></div>
+                        <p class="year year-genre-search"></p>
+                        <p class="name name-genre-search"></p>
+                    </li>
+                    <li>
+                        <div class="poster poster-genre-search"></div>
+                        <p class="year year-genre-search"></p>
+                        <p class="name name-genre-search"></p>
+                    </li>
+                    <li>
+                        <div class="poster poster-genre-search"></div>
+                        <p class="year year-genre-search"></p>
+                        <p class="name name-genre-search"></p>
+                    </li>
+                    <li>
+                        <div class="poster poster-genre-search"></div>
+                        <p class="year year-genre-search"></p>
+                        <p class="name name-genre-search"></p>
+                    </li>
+                    <li>
+                        <div class="poster poster-genre-search"></div>
+                        <p class="year year-genre-search"></p>
+                        <p class="name name-genre-search"></p>
+                    </li>
+                    <li>
+                        <div class="poster poster-genre-search"></div>
+                        <p class="year year-genre-search"></p>
+                        <p class="name name-genre-search"></p>
+                    </li>
+                    <li>
+                        <div class="poster poster-genre-search"></div>
+                        <p class="year year-genre-search"></p>
+                        <p class="name name-genre-search"></p>
+                    </li>
+                    <li>
+                        <div class="poster poster-genre-search"></div>
+                        <p class="year year-genre-search"></p>
+                        <p class="name name-genre-search"></p>
+                    </li>
+                </ul>
+
+                <div class="go-to-page-container bottom">
+                    <p>Page <span class="current-page-title">1</span></p>
+                    <form action="" class="go-to-page-form">
+                        <input type="text" placeholder="Go to page...">
+                        <button type="submit" class="submit-search"><img src="src/images/go-to-page-btn.png"
+                                alt="go to page button" class="go-to-page-btn"></button>
+                    </form>
+                    <button class="previous-page-btn inactive"><img src="src/images/go-to-page-btn.png"
+                            alt="previous page button"></button>
+                    <button class="next-page-btn"><img src="src/images/go-to-page-btn.png"
+                            alt="next page button"></button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="src/js/index.js"></script>
+</body>
+
+</html>

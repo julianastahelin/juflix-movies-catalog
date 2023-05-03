@@ -1,0 +1,469 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Bellota Text', cursive;
+    letter-spacing: 1.2px;
+}
+
+a {
+    color: #422222;
+}
+
+.top-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(../images/header-background.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.top-header h1 {
+    font-weight: 700;
+    font-size: 120px;
+    text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.87);
+}
+
+.top-header p {
+    font-weight: 700;
+    font-size: 30px;
+    text-shadow: 0px 2px 2px #000000;
+}
+
+.top-header a {
+    font-size: 40px;
+    font-weight: 300;
+    padding: 1% 3%;
+    background: rgba(19, 18, 18, 0.3);
+    margin-top: 45px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 0px 20px #000000;
+    backdrop-filter: blur(3px);
+    cursor: pointer;
+    color: #fff;
+}
+
+.top-header a:hover {
+    transform: scale(1.05);
+    transition: ease-in-out 0.3s;
+} 
+
+#main {
+    background-image: linear-gradient(#D9C4BB, #946D5B);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-header {
+    padding-top: 3%;
+    text-align: center;
+    font-weight: 700;
+    color: #422222;
+    width: 90%;
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-header h2 {
+    font-size: 80px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.main-header p {
+    font-size: 30px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 6% 1% 6%;
+    border-bottom: 0.3px solid rgba(99, 68, 54, 0.7);
+    box-shadow: 0 6px 6px -6px rgba(99, 68, 54, 1);
+}
+
+/* .main-header hr {
+    border: 0.5px solid #634436;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    width: 50%;
+    width: 100%;
+    margin: 1% auto;
+} */
+
+.navigation-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #422222;
+    padding-top: 20px;
+    gap: 30px;
+    width: 100%;
+}
+
+.navigation-bar .container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.home-button {
+    color: #422222;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.home-button:hover {
+    transform: scale(1.1);
+    transition: ease-in-out 0.2s;
+    opacity: 0.9;
+}
+
+.search-form {
+    position: relative;
+}
+
+.search-form input {
+    font-size: 14px;
+    font-weight: 300;
+    padding: 4%;
+    border: 0.5px solid #8A776F;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
+    background-color: inherit;
+    border-radius: 12px;
+    width: 350px;
+}
+
+.search-form input::-webkit-input-placeholder {
+    color: #422222;
+    font-family: 'Bellota Text', cursive;
+}
+
+.search-form .submit-search {
+    border: none;
+    background-color: inherit;
+    position: absolute;
+    right: 5%;
+    top: 25%;
+    bottom: 25%;
+    cursor: pointer;
+    color: #422222;
+}
+
+.search-form .submit-search:hover {
+    opacity: 0.8;
+    transform: scale(1.2) rotate(90deg);
+    transition: ease-in-out 0.3s;
+}
+
+/* REFATORAR DEPOIS DE DECIDIDO COMO VAI FICAR ESSA NAVEGACAO  */
+.navigation-bar .navigation-categories {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+    /* width: 80%; */
+}
+
+.navigation-bar .navigation-categories .genre-button {
+    background: #D4C1B9;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    padding: 1%;
+    cursor: pointer;
+}
+
+.navigation-bar .navigation-categories .genre-button.active {
+    background-color: #B08C7D;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.navigation-bar .navigation-categories .genre-button:hover,
+.navigation-bar .navigation-categories .genre-button.active:hover {
+    background-color: #E2B09B;
+    transition: 0.3s;
+}
+
+/* -------- FIM NAVIGATION BAR - REFATORAR -------- */
+
+.home-page-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90%;
+    padding: 3% 0;
+    gap: 30px;
+}
+
+.home-page-section h3,
+.genre-and-search-section h3 {
+    font-size: 50px;
+    align-self: flex-start;
+    padding: 3% 0 1%;
+    display: inline-block;
+    color: #422222;
+}
+
+.home-page-section h3 { 
+    cursor: pointer;
+}
+
+.home-page-section h3:hover {
+    opacity: 0.7;
+}
+
+.home-page-section ul,
+.genre-and-search-section ul {
+    display: flex;
+    flex-wrap: wrap;
+    /* overflow: hidden; */
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    position: relative;
+}
+
+/* FALTA O BOTAO */
+.home-page-section ul li,
+.genre-and-search-section ul li {
+    color: #fff;
+    font-weight: 700;
+    font-size: 28px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+.poster {
+    width: 250px;
+    height: 327px;
+    background: center center no-repeat;
+    background-size: cover;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+.animate {
+    animation-name: fade-in;
+    animation-duration: 1s;
+}
+
+.poster::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(180deg,
+    rgba(0, 0, 0, 0.68) 2.87%,
+    rgba(94, 94, 94, 0.68) 12.91%,
+    rgba(94, 94, 94, 0.3) 23.8%,
+    rgba(94, 94, 94, 0.3) 61.05%,
+    rgba(44, 44, 44, 0.85) 75.97%,
+    #040404 87.57%); */
+    background: linear-gradient(180deg, 
+    rgba(0, 0, 0, 0.82) 2.87%, 
+    rgba(94, 94, 94, 0.68) 23.96%,
+    rgba(94, 94, 94, 0.3) 40.62%,
+    rgba(94, 94, 94, 0.3) 47.4%, 
+    rgba(44, 44, 44, 0.85) 65.63%,
+    #040404 79.17%);
+    border-radius: 12px;
+    opacity: 0;
+    transition: ease-in-out 0.3s;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        scale: 0.9;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.year {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 2%;
+    opacity: 0;
+    transition: ease-in-out 0.3s;
+}
+
+.name {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 5%;
+    padding: 2%;
+    overflow-wrap: break-word;
+    opacity: 0;
+    transition: ease-in-out 0.3s;
+}
+
+.poster:hover ~ .name,
+.poster:hover ~ .year,
+.poster:hover::after  {
+    opacity: 1;
+}
+
+/* VER COMO REFATORAR OS BOTOES DEPENDENDO DE COMO VAO SER OS BOTOES DAS SECOES POR GENERO. SE FOREM IGUAIS, DA PRA DEIXAR SO PREVIOUS-BTN, NEXT-BTN */
+.arrow-btn {
+    width: 26px;
+    height: 52px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.arrow-btn.previous-btn {
+    left: -4%;
+}
+
+.arrow-btn.next-btn {
+    right: -4%;
+}
+
+.arrow-btn:hover {
+    transform: scale(1.2);
+    transition: ease-in-out 0.3s;
+    opacity: 0.7;
+}
+
+/* FINAL BOTOES - REFATORAR */
+
+.genre-and-search-section {
+    max-width: 90%;
+}
+
+.by-genre-container {
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+}
+
+.by-genre-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.go-to-page-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 2% 0 1%;
+    color: #422222;
+}
+
+.go-to-page-container form {
+    position: relative;
+}
+
+.go-to-page-container form input {
+    font-size: 14px;
+    font-weight: 300;
+    padding: 4%;
+    width: 142px;
+    height: 45px;
+    border: 0.5px solid #8A776F;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
+    background-color: inherit;
+    border-radius: 12px;
+}
+
+.go-to-page-container input::-webkit-input-placeholder {
+    color: #422222;
+    font-family: 'Bellota Text', cursive;
+}
+.go-to-page-container .submit-search {
+    border: none;
+    background-color: inherit;
+    position: absolute;
+    right: 7%;
+    top: 25%;
+    bottom: 25%;
+    cursor: pointer;
+    height: 20px;
+}
+
+.go-to-page-container .submit-search img {
+    height: 100%;
+}
+
+.go-to-page-container .submit-search:hover {
+    opacity: 0.8;
+    transform: scale(1.2);
+    transition: ease-in-out 0.3s;
+}
+
+.previous-page-btn,
+.next-page-btn {
+    height: 45px;
+    width: 45px;
+    border: 0.5px solid #8A776F;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
+    background-color: inherit;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.go-to-page-container img {
+    height: 22px;
+}
+
+/* ARRUMAR ISSO AQUI */
+.go-to-page-container .previous-page-btn img {
+    transform: rotate(180deg);
+}
+
+.previous-page-btn:hover, 
+.next-page-btn:hover {
+    transform: scale(1.02);
+    transition: ease-in-out 0.1s;
+}
+/* ---- PRA REFATORAÇAO -- OS FORM INPUTS TAO IGUAIS!!! e os submit search também ------- */
+
+.inactive {
+    opacity: 0.5;
+}
+
+.inactive:hover {
+    opacity: 0.5;
+    cursor: auto;
+    transform: none;
+    transition: none;
+}
+
+.go-to-page-container.bottom { 
+    justify-content: flex-end;
+    padding: 2% 0;
+}
+
+.hide {
+    display: none;
+}
+
+/* -------------------- ANIMATION --------------------- */
+[data-anime] {
+    opacity: 0;
+    transition: 1s;
+}
+[data-anime="up"] {
+    transform: translate3d(0, 50px, 0);
+}
+[data-anime].animate {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+}
