@@ -41,13 +41,14 @@ const namesGenreSearch = document.querySelectorAll('.name-genre-search');
 const yearsGenreSearch = document.querySelectorAll('.year-genre-search');
 const postersGenreSearch = document.querySelectorAll('.poster-genre-search');
 
+const genreAndSearchTitlesContainer = document.querySelector('.titles-container');
+const pageNotFoundMessage = document.querySelector('.not-found-message');
 let currentPage = 1;
 let currentPageTitle = document.querySelectorAll('.current-page-title');
 let currentGenre;
 let currentOrigin;
 let currentWordSearched;
 let nextPage;
-// let pageEntries;
 
 // ----- CHAMANDO O GETMOVIES -----
 
@@ -67,9 +68,10 @@ genresNavButtons.forEach((genre, index) => {
 homePageSectionTitles.forEach((title, index) => {
     title.addEventListener("click", () => {
         activateNavButton(genresNavButtons[index]);
-        removeAnimationMovies();
-        getMoviesGenreAndSearch('genres', titleGenres[index], currentPage);
-        document.getElementById("main").scrollIntoView();
+        console.log(currentPage);
+        getMoviesGenreAndSearch('genres', titleGenres[index], currentPage)
+        .then(document.getElementById("main").scrollIntoView())
+        .then((animateTitleAndPageNumber(titleGenres[index])));
     })
 })
 
@@ -96,10 +98,11 @@ function testeSearch(e) {
 
 // ----- GET MOVIES E FILL MOVIES INFOS -----
 async function getMoviesGenreAndSearch(origin, genre, page) {
-    console.log('getting pagessss', page);
-    removeAnimationMovies();
+    removeAnimationMovies(genreAndSearchSection);
+
     currentGenre = genre;
     currentOrigin = origin;
+
     if (origin === 'search') {
         var url = `https://moviesdatabase.p.rapidapi.com/titles/search/title/'${currentWordSearched}'?limit=16&info=base_info&titleType=movie&page=${page}`;
     }
@@ -113,16 +116,20 @@ async function getMoviesGenreAndSearch(origin, genre, page) {
     let response = await fetch(url, options);
     let movies = await response.json();
     let pageEntries = movies.entries;
+
     if (pageEntries === 0) {
-        alert('nao tem nada aqui')
+        genreAndSearchTitlesContainer.classList.add('hide');
+        pageNotFoundMessage.classList.remove('hide');
     } else {
+        genreAndSearchTitlesContainer.classList.remove('hide');
+        pageNotFoundMessage.classList.add('hide');
         nextPage = movies.next;
         console.log(nextPage);
         let moviesInfos = movies.results;
         console.log(moviesInfos);
         fillMoviesInfosGenreAndSearch(moviesInfos, pageEntries)
             .then(showGenreAndSearchSection())
-            .then(animateMovies(postersGenreSearch))
+            .then(animateMovies(genreAndSearchSection))
             .then(checkForNextPage(nextPage));
     }
 }
@@ -132,33 +139,17 @@ function checkForNextPage(nextPage) {
         nextPageBtn.forEach((btn) => {
             btn.classList.add('inactive');
         });
-        // botar alerta
     } else {
         nextPageBtn.forEach((btn) => {
             btn.classList.remove('inactive');
         })
     }
-    // fazer pra se digitar direto uma q nao existe, ver como ta ali o resultado null
 }
 
 async function fillMoviesInfosGenreAndSearch(moviesInfos, numberOfMovies) {
-    if (numberOfMovies < namesGenreSearch.length) {
-        let emptySlots = namesGenreSearch.length - numberOfMovies
-        let firstEmptySlot = namesGenreSearch.length - emptySlots
-        console.log(emptySlots, 'empty slots')
-        console.log('first empty slot position', firstEmptySlot)
-        for (i = firstEmptySlot; i < namesGenreSearch.length; i++) {
-            namesGenreSearch[i].classList.add('hide');
-            yearsGenreSearch[i].classList.add('hide');
-            postersGenreSearch[i].classList.add('hide');
-        }
-    } else {
-        for (i = 0; i < namesGenreSearch.length; i++) {
-            namesGenreSearch[i].classList.remove('hide');
-            yearsGenreSearch[i].classList.remove('hide');
-            postersGenreSearch[i].classList.remove('hide');
-        }
-    }
+
+    adjustNumberOfSlots(numberOfMovies);
+
     moviesInfos.forEach((movie, index) => {
         namesGenreSearch[index].innerHTML = "";
         yearsGenreSearch[index].innerHTML = "";
@@ -177,6 +168,24 @@ async function fillMoviesInfosGenreAndSearch(moviesInfos, numberOfMovies) {
         }
     });
 
+}
+
+function adjustNumberOfSlots(numberOfMovies) {
+    if (numberOfMovies < namesGenreSearch.length) {
+        let emptySlots = namesGenreSearch.length - numberOfMovies
+        let firstEmptySlot = namesGenreSearch.length - emptySlots
+        for (i = firstEmptySlot; i < namesGenreSearch.length; i++) {
+            namesGenreSearch[i].classList.add('hide');
+            yearsGenreSearch[i].classList.add('hide');
+            postersGenreSearch[i].classList.add('hide');
+        }
+    } else {
+        for (i = 0; i < namesGenreSearch.length; i++) {
+            namesGenreSearch[i].classList.remove('hide');
+            yearsGenreSearch[i].classList.remove('hide');
+            postersGenreSearch[i].classList.remove('hide');
+        }
+    }
 }
 
 // ----- PASSANDO AS PAGINAS -----
@@ -282,17 +291,32 @@ function removeAnimationTitleAndPageNumber() {
     });
 }
 
-function animateMovies() {
-    postersGenreSearch.forEach((poster) => {
-        poster.classList.add('animate');
-    });
+function animateMovies(section, postersHomeSection) {
+    if (section === genreAndSearchSection) {
+        postersGenreSearch.forEach((poster) => {
+            poster.classList.add('animate');
+        });
+    }
+    if (section === homePageSection) {
+        document.querySelectorAll(`.${postersHomeSection}`).forEach((poster) => {
+            poster.classList.add('animate');
+        });
+    }
 }
 
-function removeAnimationMovies() {
+function removeAnimationMovies(section, postersHomeSection) {
+    if (section === genreAndSearchSection) {
     postersGenreSearch.forEach((poster) => {
         poster.classList.remove('animate');
-    })
+    });
+    }
+    if (section === homePageSection) {
+        document.querySelectorAll(`.${postersHomeSection}`).forEach((poster) => {
+            poster.classList.remove('animate');
+        });
+    }
 }
+
 
 // ----------------------------------------------- HOME PAGE ---------------------------------------------------------
 const namesHomeSection = ['name-top-rated-movie', 'name-action', 'name-animation', 'name-comedy', 'name-documentary', 'name-drama', 'name-mystery', 'name-romance']
@@ -308,7 +332,9 @@ function FetchedMovie(name, year, poster) {
 }
 
 async function getMoviesHomePage(page, genre, nameMovie, yearMovie, posterMovie) {
-    console.log(posterMovie);
+
+     removeAnimationMovies(homePageSection, posterMovie);
+
     if (genre === 'Top rated movies') {
         var url = `https://moviesdatabase.p.rapidapi.com/titles?list=top_rated_250&limit=${titleInfoSlots}&info=base_info&page=${page}`;
     } else {
@@ -335,11 +361,13 @@ async function getMoviesHomePage(page, genre, nameMovie, yearMovie, posterMovie)
         }
         fetchedMoviesHomeSection.push(new FetchedMovie(name, year, poster));
     })
-    fillMoviesInfosHomePage(nameMovie, yearMovie, posterMovie);
+    fillMoviesInfosHomePage(nameMovie, yearMovie, posterMovie)
+        .then(animateMovies(homePageSection, posterMovie));
+
     fetchedMoviesHomeSection = [];
 }
 
-function fillMoviesInfosHomePage(stringName, stringYear, stringPoster) {
+async function fillMoviesInfosHomePage(stringName, stringYear, stringPoster) {
     fetchedMoviesHomeSection.forEach((movie, index) => {
         if (movie.name.length > 47) {
             document.getElementsByClassName(stringName)[index].innerHTML = `${movie.name.slice(0, 45)}...`;
@@ -364,7 +392,6 @@ nextMoviesButtonIds.forEach((buttonId, index) => {
         document.getElementById(previousMoviesButtonIds[index]).classList.remove('inactive');
         pageByGenre[index]++
         getMoviesHomePage(pageByGenre[index], titleGenres[index], namesHomeSection[index], yearsHomeSection[index], postersHomeSection[index])
-            .then(animateMovies(postersHomeSection[index]));
     })
 })
 
@@ -398,31 +425,6 @@ window.addEventListener("scroll", function () {
 });
 
 
-async function teste3(page) {
-    var url = `https://moviesdatabase.p.rapidapi.com/titles?list=top_rated_250&limit=16&info=base_info&page=${page}`;
-    try {
-        const response = await fetch(url, options);
-        const result = await response.text();
-        console.log(result);
-    } catch (error) {
-        console.error(error);
-    }
-
-}
-
-teste3(17);
-// //nos de genero - pg com 16
-// // ou if !next
-// if(next === null){
-//     //desativar botao de proxima pagina
-// } else {
-//     // ativar botao de proxima pagina
-// }
-
-// // nos de busca
-// if (text === null) {
-//     //mensagem page x doesnt exist?
-// }
 // ------------------- CODIGO PRA ANIMAR TITULO E LINEAR GRADIENT DO POST QUANDO FOR PRA TELA DE CELULAR E TABLET -------------------------------------------------
 // function animateMovies() {
 //     // ANIMAÇAO DEPENDENDO DO DEVICE - TABLET E CELULAR NAO VAO TER O HOVER, O NOME VAI APARECER DIRETO E VAI TER A ANIMAÇAO. VER COMO FAZ

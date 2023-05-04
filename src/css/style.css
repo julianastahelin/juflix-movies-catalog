@@ -221,8 +221,7 @@ a {
     opacity: 0.7;
 }
 
-.home-page-section ul,
-.genre-and-search-section ul {
+.home-page-section ul {
     display: flex;
     flex-wrap: wrap;
     /* overflow: hidden; */
@@ -354,13 +353,23 @@ a {
     padding: 3% 0;
 }
 
-.by-genre-container .titles-container {
+.genre-and-search-section ul {
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* overflow: hidden; */
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    position: relative;
+}
+ /* JUNTAR ISSO AQUI LA ONDE TEM AS COISAS DA OUTRA SECAO ACHO */
+.titles-container {
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(4, auto);
 }
 
-.error-container {
+.not-found-message {
     display: flex;
     align-items: center;
     justify-content: center;
