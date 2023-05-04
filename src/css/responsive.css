@@ -31,6 +31,10 @@
     .arrow-btn.next-btn {
         right: 8%;
     }
+
+    .titles-container {
+        grid-template-columns: repeat(3, auto);
+    }
 }
 
 @media (max-width: 990px) {
@@ -67,6 +71,14 @@
     .home-page-section ul {
         max-width: 85%;
     }
+    .titles-container {
+        grid-template-columns: repeat(2, auto);
+    }
+    /* .titles-container .poster {
+        width: 230px;
+        height: 300px;
+    } */
+
 }
 
 @media (max-width: 820px) {

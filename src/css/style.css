@@ -262,20 +262,12 @@ a {
     top: 0;
     width: 100%;
     height: 100%;
-    /* background: linear-gradient(180deg,
-    rgba(0, 0, 0, 0.68) 2.87%,
-    rgba(94, 94, 94, 0.68) 12.91%,
-    rgba(94, 94, 94, 0.3) 23.8%,
-    rgba(94, 94, 94, 0.3) 61.05%,
-    rgba(44, 44, 44, 0.85) 75.97%,
-    #040404 87.57%); */
     background: linear-gradient(180deg, 
-    rgba(0, 0, 0, 0.82) 2.87%, 
-    rgba(94, 94, 94, 0.68) 23.96%,
-    rgba(94, 94, 94, 0.3) 40.62%,
-    rgba(94, 94, 94, 0.3) 47.4%, 
-    rgba(44, 44, 44, 0.85) 65.63%,
-    #040404 79.17%);
+    rgba(0, 0, 0, 0.81) 11.88%, 
+    rgba(0, 0, 0, 0.53) 22.65%, 
+    rgba(0, 0, 0, 0.2) 46.53%, 
+    rgba(0, 0, 0, 0.51) 59.94%, 
+    rgba(0, 0, 0, 0.81) 78.18%);
     border-radius: 12px;
     opacity: 0;
     transition: ease-in-out 0.3s;
@@ -354,9 +346,6 @@ a {
 }
 
 .genre-and-search-section ul {
-    /* display: flex; */
-    /* flex-wrap: wrap; */
-    /* overflow: hidden; */
     align-items: center;
     justify-content: space-between;
     gap: 14px;
