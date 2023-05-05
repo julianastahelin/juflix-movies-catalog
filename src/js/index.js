@@ -118,6 +118,8 @@ async function getMoviesGenreAndSearch(origin, genre, page) {
     let pageEntries = movies.entries;
 
     if (pageEntries === 0) {
+        homePageSection.classList.add('hide');
+        genreAndSearchSection.classList.remove('hide');
         genreAndSearchTitlesContainer.classList.add('hide');
         pageNotFoundMessage.classList.remove('hide');
     } else {

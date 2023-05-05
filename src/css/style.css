@@ -474,3 +474,14 @@ a {
     opacity: 1;
     transform: translate3d(0px, 0px, 0px);
 }
+
+
+/* ------------------ FOOTER ----------------- */
+footer {
+    background-color: #946D5B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1% 0 3%;
+}
