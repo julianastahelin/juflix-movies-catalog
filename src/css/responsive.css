@@ -27,7 +27,7 @@
     .arrow-btn.previous-btn {
         left: 8%;
     }
-    
+
     .arrow-btn.next-btn {
         right: 8%;
     }
@@ -41,7 +41,7 @@
     .arrow-btn.previous-btn {
         left: 5%;
     }
-    
+
     .arrow-btn.next-btn {
         right: 5%;
     }
@@ -51,7 +51,7 @@
     .arrow-btn.previous-btn {
         left: 3%;
     }
-    
+
     .arrow-btn.next-btn {
         right: 3%;
     }
@@ -61,9 +61,29 @@
     .arrow-btn.previous-btn {
         left: 1%;
     }
-    
+
     .arrow-btn.next-btn {
         right: 1%;
+    }
+
+    .by-genre-header {
+        flex-direction: column;
+        padding-bottom: 2%;
+    }
+
+    .go-to-page-container {
+        align-self: flex-end;
+    }
+
+    .go-to-page-container form input {
+        width: 140px;
+        height: 43px;
+    }
+
+    .previous-page-btn,
+    .next-page-btn {
+        height: 43px;
+        width: 43px;
     }
 }
 
@@ -71,13 +91,10 @@
     .home-page-section ul {
         max-width: 85%;
     }
+
     .titles-container {
         grid-template-columns: repeat(2, auto);
     }
-    /* .titles-container .poster {
-        width: 230px;
-        height: 300px;
-    } */
 
 }
 
@@ -85,7 +102,7 @@
     .arrow-btn.previous-btn {
         left: 0%;
     }
-    
+
     .arrow-btn.next-btn {
         right: 0%;
     }
@@ -95,7 +112,7 @@
     .arrow-btn.previous-btn {
         left: -1%;
     }
-    
+
     .arrow-btn.next-btn {
         right: -1%;
     }
@@ -115,9 +132,21 @@
     .arrow-btn.previous-btn {
         left: 0%;
     }
-    
+
     .arrow-btn.next-btn {
         right: 0%;
+    }
+
+    .year {
+        opacity: 1;
+    }
+
+    .name {
+        opacity: 1;
+    }
+
+    .poster::after {
+        opacity: 1;
     }
 }
 
@@ -125,7 +154,7 @@
     .arrow-btn.previous-btn {
         left: -3%;
     }
-    
+
     .arrow-btn.next-btn {
         right: -3%;
     }
@@ -153,11 +182,23 @@
         width: 20px;
         height: 40px;
     }
+
     .arrow-btn.previous-btn {
         left: -8%;
     }
+
     .arrow-btn.next-btn {
         right: -8%;
+    }
+
+    .home-page-section h3,
+    .genre-and-search-section h3 {
+        font-size: 48px;
+    }
+
+    .home-page-section ul li,
+    .genre-and-search-section ul li {
+        font-size: 25px;
     }
 
 }
@@ -176,6 +217,38 @@
         right: -10%;
     }
 
+    .go-to-page-container {
+        gap: 8px;
+    }
+    .go-to-page-container form input {
+        width: 135px;
+        height: 41px;
+    }
+
+    .go-to-page-container img,
+    .go-to-page-container .submit-search  {
+        height: 20px;
+    }
+
+    .previous-page-btn,
+    .next-page-btn {
+        height: 41px;
+        width: 41px;
+    }
+
+    .home-page-section h3,
+    .genre-and-search-section h3 {
+        font-size: 45px;
+    }
+
+    .home-page-section ul li,
+    .genre-and-search-section ul li {
+        font-size: 21px;
+    }
+
+    .navigation-bar .navigation-categories .genre-button {
+        padding: 1.5%;
+    }
 }
 
 @media (max-width: 510px) {
@@ -187,6 +260,27 @@
     .arrow-btn {
         width: 17px;
         height: 34px;
+    }
+
+    .go-to-page-container form input {
+        width: 130px;
+        height: 38px;
+        font-size: 12px;
+    }
+
+    .previous-page-btn,
+    .next-page-btn {
+        height: 38px;
+        width: 38px;
+    }
+
+    .home-page-section h3,
+    .genre-and-search-section h3 {
+        font-size: 40px;
+    }
+
+    .navigation-bar .navigation-categories .genre-button {
+        font-size: 14px;
     }
 }
 
@@ -200,14 +294,20 @@
         gap: 14px;
     }
 
+    .main-header h2 {
+        font-size: 77px;
+    }
+
+    .main-header p {
+        font-size: 25px;
+    }
+
     .navigation-bar .container {
         flex-direction: column;
     }
 
     .search-form input {
         width: 300px;
-        padding: 4.5%;
-        font-size: 16px;
     }
 
     .search-form .submit-search {
@@ -216,6 +316,15 @@
 
     .home-button i {
         font-size: 16px;
+    }
+
+    .home-page-section ul li,
+    .genre-and-search-section ul li {
+        font-size: 20px;
+    }
+
+    .go-to-page-container {
+        gap: 6px;
     }
 }
 
@@ -236,15 +345,52 @@
     .arrow-btn.next-btn {
         right: -13%;
     }
+
+    .go-to-page-container form input {
+        width: 125px;
+        height: 36px;
+    }
+
+    .previous-page-btn,
+    .next-page-btn {
+        height: 36px;
+        width: 36px;
+    }
+
+    .home-page-section h3,
+    .genre-and-search-section h3 {
+        font-size: 37px;
+    }
+
+    .home-page-section ul li,
+    .genre-and-search-section ul li {
+        font-size: 18px;
+    }
 }
 
 @media (max-width: 375px) {
+    .main-header h2 {
+        font-size: 73px;
+    }
+
+    .main-header p {
+        font-size: 22px;
+    }
+
+    .go-to-page-container form input {
+        width: 110px;
+    }
+
     .arrow-btn.previous-btn {
         left: -13%;
     }
 
     .arrow-btn.next-btn {
         right: -13%;
+    }
+
+    .navigation-bar .navigation-categories .genre-button {
+        padding: 2%;
     }
 }
 
@@ -272,8 +418,6 @@
 
     .search-form input {
         width: 270px;
-        padding: 5%;
-        font-size: 18px;
     }
 
     .search-form .submit-search {
@@ -286,7 +430,7 @@
 
     .home-page-section h3,
     .genre-and-search-section h3 {
-        font-size: 40px;
+        font-size: 35px;
     }
 }
 
@@ -296,12 +440,32 @@
         height: 156px;
     }
 
+    .search-form input {
+        width: 250px;
+    }
+
     .home-page-section ul {
         gap: 5px;
     }
 
     .navigation-bar .container {
         gap: 15px;
+    }
+    
+    .go-to-page-container form input {
+        width: 95px;
+        height: 34px;
+    }
+
+    .go-to-page-container img, 
+    .go-to-page-container .submit-search {
+        height: 17px;
+    }
+
+    .previous-page-btn,
+    .next-page-btn {
+        height: 34px;
+        width: 34px;
     }
 
     .arrow-btn {
@@ -315,5 +479,15 @@
 
     .arrow-btn.next-btn {
         right: -10%;
+    }
+
+    .home-page-section h3,
+    .genre-and-search-section h3 {
+        font-size: 33px;
+    }
+
+    .home-page-section ul li,
+    .genre-and-search-section ul li {
+        font-size: 16px;
     }
 }

@@ -70,8 +70,8 @@ homePageSectionTitles.forEach((title, index) => {
         activateNavButton(genresNavButtons[index]);
         console.log(currentPage);
         getMoviesGenreAndSearch('genres', titleGenres[index], currentPage)
-        .then(document.getElementById("main").scrollIntoView())
-        .then((animateTitleAndPageNumber(titleGenres[index])));
+            .then(document.getElementById("main").scrollIntoView())
+            .then((animateTitleAndPageNumber(titleGenres[index])));
     })
 })
 
@@ -306,9 +306,9 @@ function animateMovies(section, postersHomeSection) {
 
 function removeAnimationMovies(section, postersHomeSection) {
     if (section === genreAndSearchSection) {
-    postersGenreSearch.forEach((poster) => {
-        poster.classList.remove('animate');
-    });
+        postersGenreSearch.forEach((poster) => {
+            poster.classList.remove('animate');
+        });
     }
     if (section === homePageSection) {
         document.querySelectorAll(`.${postersHomeSection}`).forEach((poster) => {
@@ -317,12 +317,24 @@ function removeAnimationMovies(section, postersHomeSection) {
     }
 }
 
-
 // ----------------------------------------------- HOME PAGE ---------------------------------------------------------
 const namesHomeSection = ['name-top-rated-movie', 'name-action', 'name-animation', 'name-comedy', 'name-documentary', 'name-drama', 'name-mystery', 'name-romance']
 const yearsHomeSection = ['year-top-rated-movie', 'year-action', 'year-animation', 'year-comedy', 'year-documentary', 'year-drama', 'year-mystery', 'year-romance']
 const postersHomeSection = ['poster-top-rated-movie', 'poster-action', 'poster-animation', 'poster-comedy', 'poster-documentary', 'poster-drama', 'poster-mystery', 'poster-romance']
-let titleInfoSlots = 4;
+
+function checkMovieSlots(width) {
+    if (width.matches) {
+      titleInfoSlots = 2;
+    } else {
+      titleInfoSlots = 4;
+    }
+    console.log(titleInfoSlots);
+  }
+  
+  var width = window.matchMedia("(max-width: 660px)")
+  checkMovieSlots(width);
+  width.addListener(checkMovieSlots);
+
 var fetchedMoviesHomeSection = [];
 
 function FetchedMovie(name, year, poster) {
@@ -333,7 +345,7 @@ function FetchedMovie(name, year, poster) {
 
 async function getMoviesHomePage(page, genre, nameMovie, yearMovie, posterMovie) {
 
-     removeAnimationMovies(homePageSection, posterMovie);
+    removeAnimationMovies(homePageSection, posterMovie);
 
     if (genre === 'Top rated movies') {
         var url = `https://moviesdatabase.p.rapidapi.com/titles?list=top_rated_250&limit=${titleInfoSlots}&info=base_info&page=${page}`;

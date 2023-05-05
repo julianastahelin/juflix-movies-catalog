@@ -87,14 +87,6 @@ a {
     box-shadow: 0 6px 6px -6px rgba(99, 68, 54, 1);
 }
 
-/* .main-header hr {
-    border: 0.5px solid #634436;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    width: 50%;
-    width: 100%;
-    margin: 1% auto;
-} */
-
 .navigation-bar {
     display: flex;
     flex-direction: column;
@@ -170,7 +162,6 @@ a {
     gap: 10px;
     width: 100%;
     flex-wrap: wrap;
-    /* width: 80%; */
 }
 
 .navigation-bar .navigation-categories .genre-button {
@@ -200,7 +191,7 @@ a {
     flex-direction: column;
     align-items: center;
     max-width: 90%;
-    padding: 3% 0;
+    padding: 3% 0 6%;
     gap: 30px;
 }
 
@@ -224,7 +215,6 @@ a {
 .home-page-section ul {
     display: flex;
     flex-wrap: wrap;
-    /* overflow: hidden; */
     align-items: center;
     justify-content: space-between;
     gap: 14px;
@@ -432,6 +422,12 @@ a {
 
 .go-to-page-container img {
     height: 22px;
+}
+
+.go-to-page-container.bottom form input,
+.go-to-page-container.bottom .previous-page-btn,
+.go-to-page-container.bottom .next-page-btn {
+    border: 0.5px solid #422222;
 }
 
 /* ARRUMAR ISSO AQUI */
