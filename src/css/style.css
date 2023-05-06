@@ -303,7 +303,7 @@ nav ul li.active:hover {
     align-items: center;
     justify-content: space-between;
     gap: 14px;
-    position: relative;
+    /* position: relative; */
 }
 
 .home-page-section ul {
@@ -407,7 +407,9 @@ nav ul li.active:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10%;
+    padding: 7%;
+    width: 81vw;
+    font-size: 18px;
 }
 
 .inactive {

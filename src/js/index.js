@@ -199,7 +199,6 @@ nextMoviesButtonIds.forEach((buttonId, index) => {
         } else {
             document.getElementById(previousMoviesButtonIds[index]).classList.remove('inactive');
             pageByGenre[index]++
-            console.log(pageByGenre)
             getMoviesHomePage(pageByGenre[index], titleGenres[index], namesHomeSection[index], yearsHomeSection[index], postersHomeSection[index])
             .then(() => {
                 if (nextMovies === null) {
@@ -297,12 +296,13 @@ async function getMoviesGenreAndSearch(origin, genre, page) {
     let response = await fetch(url, options);
     let movies = await response.json();
     document.querySelector('.not-found-message').classList.add('hide');
-    checkForPageEntries(movies.entries);
     document.querySelector('.titles-container').classList.remove('hide');
+    if(checkForPageEntries(movies.entries)) {
     fillMoviesInfosGenreAndSearch(movies.results, movies.entries)
         .then(showGenreAndSearchSection())
         .then(animateMovies(genreAndSearchSection))
         .then(checkForNextPage(movies.next));
+    }
 }
 
 async function fillMoviesInfosGenreAndSearch(moviesInfos, numberOfMovies) {
@@ -356,7 +356,6 @@ previousPageBtn.forEach((button) => {
                 position.innerHTML = currentPage;
             });
             document.getElementById("main").scrollIntoView();
-            console.log('getting page', currentPage);
             getMoviesGenreAndSearch(currentOrigin, currentGenre, currentPage);
         }
         if (currentPage === 1) {
@@ -372,7 +371,6 @@ document.querySelectorAll('.go-to-page-form').forEach((input, index) => {
     input.addEventListener('submit', (e) => {
         e.preventDefault();
         currentPage = pageNumberInput[index].value;
-        console.log(currentPage)
         if (currentPage < 1 || currentPage === '') {
             pageNumberInput[index].value = '';
             return;
@@ -399,9 +397,8 @@ document.querySelectorAll('.go-to-page-form').forEach((input, index) => {
 })
 
 function checkForPageEntries(pageEntries) {
-    if (pageEntries === 0) {
+    if (pageEntries === 0 || pageEntries === undefined || pageEntries === null) {
         homePageSection.classList.add('hide');
-        console.log(homePageSection)
         genreAndSearchSection.classList.remove('hide');
         document.querySelector('.titles-container').classList.add('hide');
         document.querySelector('.not-found-message').classList.remove('hide');
@@ -409,8 +406,9 @@ function checkForPageEntries(pageEntries) {
         previousPageBtn.forEach((btn) => {
             btn.classList.add('inactive');
         })
+        return false;
     } else {
-        return;
+        return true;
     }
 }
 

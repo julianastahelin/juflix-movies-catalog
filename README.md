@@ -1,12 +1,16 @@
 <h1>Juflix - Catalog of movies</h1>
 
-<p>This is a catalog of movies built consuming a free API. It is a personal project I coded using HTML, CSS and vanilla Javascript. Project design by Sabrina Stahelin on Figma.</p>
-<p>User can browse movie titles by top rated movies (on IMDB website) or by genre. It is also possible to search by name. Movie info displayed are title, year and poster (when available). Other functionalities will be added in future versions.</p>
+<p>This is a catalog of movies built consuming a free API. It is a personal project I coded using HTML, CSS and vanilla Javascript for practicing purposes.</p>
+<p>Project design by Sabrina Stahelin on Figma.</p>
 
 <h2>Overview</h2>
 
 <h3>The project</h3>
+<p>Users can either search movies by name, using the search bar, or browse movie titles by several categories: IMDB top rated movies list and 7 movie genres. Movies' information provided are posters (when available) and, on mouse hover, movie titles and release years.</p>
+<p>In all sections it is possible to navigate to following or previous page. When browsing in the categories listed and browsing search results, it is also possible to insert the page number wished.</p> 
 <p>Page responsiveness to multiple screen sizes was addressed to improve user's experience.</p>
+<p>Other functionalities will be added in future versions.</p>
+
 
 <h3>Preview</h3>
 <h4>Desktop</h4>
