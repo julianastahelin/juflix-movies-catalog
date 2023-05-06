@@ -10,14 +10,12 @@ function showHomePageSection() {
     homePageSection.classList.remove('hide');
     genreAndSearchSection.classList.add('hide');
     activateNavButton('');
-    console.log(pageByGenre)
     pageByGenre = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     titleGenres.forEach((title, index) => {
         getMoviesHomePage(pageByGenre[index], title, namesHomeSection[index], yearsHomeSection[index], postersHomeSection[index]);
         document.getElementById(previousMoviesButtonIds[index]).classList.add('inactive');
     })
     document.getElementById("main").scrollIntoView()
-    console.log(pageByGenre)
 }
 document.querySelector('.home-button').addEventListener("click", showHomePageSection);
 
@@ -107,35 +105,41 @@ const homePageSection = document.querySelector('.home-page-section');
 const genreAndSearchSection = document.querySelector('.genre-and-search-section');
 const pageNumberContainer = document.querySelectorAll('.go-to-page-container');
 
-const genresNavButtons = [document.getElementById('top-rated-movies'), document.getElementById('action'), document.getElementById('animation'), document.getElementById('comedy'), document.getElementById('documentary'), document.getElementById('drama'), document.getElementById('mystery'), document.getElementById('romance')];
-const homePageSectionTitles = [document.getElementById('top-rated-movies-title'), document.getElementById('action-title'), document.getElementById('animation-title'), document.getElementById('comedy-title'), document.getElementById('documentary-title'), document.getElementById('drama-title'), document.getElementById('mystery-title'), document.getElementById('romance-title')];
-const titleGenres = ['Top rated movies', 'Action', 'Animation', 'Comedy', 'Documentary', 'Drama', 'Mystery', 'Romance'];
+const genresNavButtons = [
+    document.getElementById('top-rated-movies'), 
+    document.getElementById('action'), 
+    document.getElementById('animation'), 
+    document.getElementById('comedy'), 
+    document.getElementById('documentary'), 
+    document.getElementById('drama'), 
+    document.getElementById('mystery'), 
+    document.getElementById('romance') ];
 
-const namesHomeSection = ['name-top-rated-movie', 'name-action', 'name-animation', 'name-comedy', 'name-documentary', 'name-drama', 'name-mystery', 'name-romance']
-const yearsHomeSection = ['year-top-rated-movie', 'year-action', 'year-animation', 'year-comedy', 'year-documentary', 'year-drama', 'year-mystery', 'year-romance']
-const postersHomeSection = ['poster-top-rated-movie', 'poster-action', 'poster-animation', 'poster-comedy', 'poster-documentary', 'poster-drama', 'poster-mystery', 'poster-romance']
+const homePageSectionTitles = [
+    document.getElementById('top-rated-movies-title'), 
+    document.getElementById('action-title'), 
+    document.getElementById('animation-title'), 
+    document.getElementById('comedy-title'), 
+    document.getElementById('documentary-title'), 
+    document.getElementById('drama-title'), 
+    document.getElementById('mystery-title'), 
+    document.getElementById('romance-title') ];
 
-function checkMovieSlots(width) {
-    if (width.matches) {
-        titleInfoSlots = 2;
-    } else {
-        titleInfoSlots = 4;
-    }
-    console.log(titleInfoSlots);
-}
+const titleGenres = [ 'Top rated movies', 'Action', 'Animation', 'Comedy', 'Documentary', 'Drama', 'Mystery', 'Romance' ];
 
-var width = window.matchMedia("(max-width: 660px)")
-checkMovieSlots(width);
-width.addListener(checkMovieSlots);
+const namesHomeSection = [ 'name-top-rated-movie', 'name-action', 'name-animation', 'name-comedy', 'name-documentary', 'name-drama', 'name-mystery', 'name-romance' ]
+const yearsHomeSection = [ 'year-top-rated-movie', 'year-action', 'year-animation', 'year-comedy', 'year-documentary', 'year-drama', 'year-mystery', 'year-romance' ]
+const postersHomeSection = [ 'poster-top-rated-movie', 'poster-action', 'poster-animation', 'poster-comedy', 'poster-documentary', 'poster-drama', 'poster-mystery', 'poster-romance' ]
 
 var fetchedMoviesHomeSection = [];
+let nextMovies;
 
 function FetchedMovie(name, year, poster) {
     this.name = name;
     this.year = year;
     this.poster = poster
 }
-let nextMovies;
+
 async function getMoviesHomePage(page, genre, nameMovie, yearMovie, posterMovie) {
     removeAnimationMovies(homePageSection, posterMovie);
     if (genre === 'Top rated movies') {
@@ -145,8 +149,7 @@ async function getMoviesHomePage(page, genre, nameMovie, yearMovie, posterMovie)
     }
     const response = await fetch(url, options);
     let movies = await response.json();
-    checkForPageEntries(movies.entries); // ISSO AQUI ACHO Q NAO TEM SENTIDO AQUI
-    console.log('entries', movies.entries)
+    checkForPageEntries(movies.entries);
     nextMovies = movies.next;
     movies.results.forEach((movie) => {
         if (movie.titleText.text) {
@@ -184,10 +187,6 @@ async function fillMoviesInfosHomePage(stringName, stringYear, stringPoster, num
         document.getElementsByClassName(stringPoster)[index].style.backgroundImage = `url(${movie.poster})`;
     })
 }
-
-titleGenres.forEach((title, index) => {
-    getMoviesHomePage(1, title, namesHomeSection[index], yearsHomeSection[index], postersHomeSection[index]);
-})
 
 const nextMoviesButtonIds = ['next-top-rated-movie', 'next-action', 'next-animation', 'next-comedy', 'next-documentary', 'next-drama', 'next-mystery', 'next-romance']
 const previousMoviesButtonIds = ['previous-top-rated-movie', 'previous-action', 'previous-animation', 'previous-comedy', 'previous-documentary', 'previous-drama', 'previous-mystery', 'previous-romance']
@@ -231,8 +230,6 @@ const namesGenreSearch = document.querySelectorAll('.name-genre-search');
 const yearsGenreSearch = document.querySelectorAll('.year-genre-search');
 const postersGenreSearch = document.querySelectorAll('.poster-genre-search');
 
-const genreAndSearchTitlesContainer = document.querySelector('.titles-container');
-const pageNotFoundMessage = document.querySelector('.not-found-message');
 let currentPage = 1;
 let currentPageTitle = document.querySelectorAll('.current-page-title');
 let currentGenre;
@@ -299,44 +296,13 @@ async function getMoviesGenreAndSearch(origin, genre, page) {
     }
     let response = await fetch(url, options);
     let movies = await response.json();
-    console.log('movies are', movies)
-    pageNotFoundMessage.classList.add('hide');
+    document.querySelector('.not-found-message').classList.add('hide');
     checkForPageEntries(movies.entries);
-    genreAndSearchTitlesContainer.classList.remove('hide');
+    document.querySelector('.titles-container').classList.remove('hide');
     fillMoviesInfosGenreAndSearch(movies.results, movies.entries)
         .then(showGenreAndSearchSection())
         .then(animateMovies(genreAndSearchSection))
         .then(checkForNextPage(movies.next));
-}
-
-function checkForPageEntries(pageEntries) {
-    console.log('movies entries are', pageEntries)
-    if (pageEntries === 0) {
-        homePageSection.classList.add('hide');
-        console.log(homePageSection)
-        genreAndSearchSection.classList.remove('hide');
-        genreAndSearchTitlesContainer.classList.add('hide');
-        pageNotFoundMessage.classList.remove('hide');
-        checkForNextPage(pageEntries);
-        previousPageBtn.forEach((btn) => {
-            btn.classList.add('inactive');
-        })
-    } else {
-        return;
-    }
-}
-// ISSO AQUI TA CONFUSO, NAO SEI SE PRECISA DESSA FUNCAO, POSSO SO BOTAR ALI EM CIMA? OU ESCREVER MELHOR, REUTILIZAR ELA MAIS
-function checkForNextPage(nextPage) {
-    console.log('checking for next page')
-    if (nextPage === null || nextPage === 0) {
-        nextPageBtn.forEach((btn) => {
-            btn.classList.add('inactive');
-        });
-    } else {
-        nextPageBtn.forEach((btn) => {
-            btn.classList.remove('inactive');
-        })
-    }
 }
 
 async function fillMoviesInfosGenreAndSearch(moviesInfos, numberOfMovies) {
@@ -402,10 +368,7 @@ previousPageBtn.forEach((button) => {
 })
 
 let pageNumberInput = document.querySelectorAll('.go-to-page-form input');
-let pageNumberForm = document.querySelectorAll('.go-to-page-form');
-console.log(pageNumberInput)
-console.log(pageNumberForm)
-pageNumberForm.forEach((input, index) => {
+document.querySelectorAll('.go-to-page-form').forEach((input, index) => {
     input.addEventListener('submit', (e) => {
         e.preventDefault();
         currentPage = pageNumberInput[index].value;
@@ -435,6 +398,34 @@ pageNumberForm.forEach((input, index) => {
     });
 })
 
+function checkForPageEntries(pageEntries) {
+    if (pageEntries === 0) {
+        homePageSection.classList.add('hide');
+        console.log(homePageSection)
+        genreAndSearchSection.classList.remove('hide');
+        document.querySelector('.titles-container').classList.add('hide');
+        document.querySelector('.not-found-message').classList.remove('hide');
+        checkForNextPage(pageEntries);
+        previousPageBtn.forEach((btn) => {
+            btn.classList.add('inactive');
+        })
+    } else {
+        return;
+    }
+}
+
+function checkForNextPage(nextPage) {
+    if (nextPage === null || nextPage === 0) {
+        nextPageBtn.forEach((btn) => {
+            btn.classList.add('inactive');
+        });
+    } else {
+        nextPageBtn.forEach((btn) => {
+            btn.classList.remove('inactive');
+        })
+    }
+}
+
 function adjustNumberOfSlots(numberOfMovies, numberOfSlots, stringName, stringYear, stringPoster) {
     if (numberOfMovies < numberOfSlots) {
         let emptySlots = numberOfSlots - numberOfMovies
@@ -452,3 +443,18 @@ function adjustNumberOfSlots(numberOfMovies, numberOfSlots, stringName, stringYe
         }
     }
 }
+
+function checkMovieSlots(width) {
+    if (width.matches) {
+        titleInfoSlots = 2;
+    } else {
+        titleInfoSlots = 4;
+    }
+        titleGenres.forEach((title, index) => {
+            getMoviesHomePage(pageByGenre[index], title, namesHomeSection[index], yearsHomeSection[index], postersHomeSection[index]);
+        })
+}
+
+const width = window.matchMedia("(max-width: 660px)")
+checkMovieSlots(width);
+width.addEventListener("change", checkMovieSlots);
