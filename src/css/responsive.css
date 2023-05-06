@@ -3,15 +3,9 @@
         width: 230px;
         height: 300px;
     }
-
 }
 
 @media (max-width: 1086px) {
-    .poster {
-        width: 250px;
-        height: 327px;
-    }
-
     .home-page-section ul {
         max-width: 80%;
         justify-content: center;
@@ -24,16 +18,21 @@
         flex-direction: column;
     }
 
+    .titles-container {
+        grid-template-columns: repeat(3, auto);
+    }
+
+    .poster {
+        width: 250px;
+        height: 327px;
+    }
+
     .arrow-btn.previous-btn {
         left: 8%;
     }
 
     .arrow-btn.next-btn {
         right: 8%;
-    }
-
-    .titles-container {
-        grid-template-columns: repeat(3, auto);
     }
 }
 
@@ -58,14 +57,6 @@
 }
 
 @media (max-width: 900px) {
-    .arrow-btn.previous-btn {
-        left: 1%;
-    }
-
-    .arrow-btn.next-btn {
-        right: 1%;
-    }
-
     .by-genre-header {
         flex-direction: column;
         padding-bottom: 2%;
@@ -78,6 +69,14 @@
     .go-to-page-container form input {
         width: 140px;
         height: 43px;
+    }
+
+    .arrow-btn.previous-btn {
+        left: 1%;
+    }
+
+    .arrow-btn.next-btn {
+        right: 1%;
     }
 
     .previous-page-btn,
@@ -95,7 +94,6 @@
     .titles-container {
         grid-template-columns: repeat(2, auto);
     }
-
 }
 
 @media (max-width: 820px) {
@@ -129,12 +127,8 @@
         height: 300px;
     }
 
-    .arrow-btn.previous-btn {
-        left: 0%;
-    }
-
-    .arrow-btn.next-btn {
-        right: 0%;
+    .poster::after {
+        opacity: 1;
     }
 
     .year {
@@ -145,8 +139,12 @@
         opacity: 1;
     }
 
-    .poster::after {
-        opacity: 1;
+    .arrow-btn.previous-btn {
+        left: 0%;
+    }
+
+    .arrow-btn.next-btn {
+        right: 0%;
     }
 }
 
@@ -161,6 +159,11 @@
 }
 
 @media (max-width: 660px) {
+    .home-page-section h3,
+    .genre-and-search-section h3 {
+        font-size: 48px;
+    }
+
     .home-page-section ul {
         flex-wrap: nowrap;
         flex-direction: row;
@@ -168,14 +171,19 @@
         gap: 20px;
     }
 
-    .poster {
-        width: 210px;
-        height: 274px;
+    .home-page-section ul li,
+    .genre-and-search-section ul li {
+        font-size: 25px;
     }
 
     .movie-3,
     .movie-4 {
         display: none;
+    }
+
+    .poster {
+        width: 210px;
+        height: 274px;
     }
 
     .arrow-btn {
@@ -190,31 +198,26 @@
     .arrow-btn.next-btn {
         right: -8%;
     }
+}
+
+@media (max-width: 570px) {
+    nav ul li {
+        padding: 1.5%;
+    }
 
     .home-page-section h3,
     .genre-and-search-section h3 {
-        font-size: 48px;
+        font-size: 45px;
     }
 
     .home-page-section ul li,
     .genre-and-search-section ul li {
-        font-size: 25px;
+        font-size: 21px;
     }
 
-}
-
-@media (max-width: 570px) {
     .poster {
         width: 180px;
         height: 235px;
-    }
-
-    .arrow-btn.previous-btn {
-        left: -10%;
-    }
-
-    .arrow-btn.next-btn {
-        right: -10%;
     }
 
     .go-to-page-container {
@@ -230,36 +233,34 @@
         height: 20px;
     }
 
+    .arrow-btn.previous-btn {
+        left: -10%;
+    }
+
+    .arrow-btn.next-btn {
+        right: -10%;
+    }
+
     .previous-page-btn,
     .next-page-btn {
         height: 41px;
         width: 41px;
     }
-
-    .home-page-section h3,
-    .genre-and-search-section h3 {
-        font-size: 45px;
-    }
-
-    .home-page-section ul li,
-    .genre-and-search-section ul li {
-        font-size: 21px;
-    }
-
-    .navigation-bar .navigation-categories .genre-button {
-        padding: 1.5%;
-    }
 }
 
 @media (max-width: 510px) {
+    nav ul li {
+        font-size: 14px;
+    }
+
+    .home-page-section h3,
+    .genre-and-search-section h3 {
+        font-size: 40px;
+    }
+
     .poster {
         width: 160px;
         height: 209px;
-    }
-
-    .arrow-btn {
-        width: 17px;
-        height: 34px;
     }
 
     .go-to-page-container form input {
@@ -268,32 +269,20 @@
         font-size: 12px;
     }
 
+    .arrow-btn {
+        width: 17px;
+        height: 34px;
+    }
+
     .previous-page-btn,
     .next-page-btn {
         height: 38px;
         width: 38px;
     }
 
-    .home-page-section h3,
-    .genre-and-search-section h3 {
-        font-size: 40px;
-    }
-
-    .navigation-bar .navigation-categories .genre-button {
-        font-size: 14px;
-    }
 }
 
 @media (max-width: 460px) {
-    .poster {
-        width: 150px;
-        height: 196px;
-    }
-
-    .home-page-section ul {
-        gap: 14px;
-    }
-
     .main-header h2 {
         font-size: 77px;
     }
@@ -302,8 +291,21 @@
         font-size: 25px;
     }
 
-    .navigation-bar .container {
+    nav .container {
         flex-direction: column;
+    }
+
+    .home-button i {
+        font-size: 16px;
+    }
+
+    .home-page-section ul {
+        gap: 14px;
+    }
+
+    .home-page-section ul li,
+    .genre-and-search-section ul li {
+        font-size: 20px;
     }
 
     .search-form input {
@@ -314,13 +316,9 @@
         font-size: 16px;
     }
 
-    .home-button i {
-        font-size: 16px;
-    }
-
-    .home-page-section ul li,
-    .genre-and-search-section ul li {
-        font-size: 20px;
+    .poster {
+        width: 150px;
+        height: 196px;
     }
 
     .go-to-page-container {
@@ -329,13 +327,28 @@
 }
 
 @media (max-width: 426px) {
+    .home-page-section h3,
+    .genre-and-search-section h3 {
+        font-size: 37px;
+    }
+
+    .home-page-section ul {
+        gap: 12px;
+    }
+
+    .home-page-section ul li,
+    .genre-and-search-section ul li {
+        font-size: 18px;
+    }
+
     .poster {
         width: 130px;
         height: 170px;
     }
 
-    .home-page-section ul {
-        gap: 12px;
+    .go-to-page-container form input {
+        width: 125px;
+        height: 36px;
     }
 
     .arrow-btn.previous-btn {
@@ -346,25 +359,10 @@
         right: -13%;
     }
 
-    .go-to-page-container form input {
-        width: 125px;
-        height: 36px;
-    }
-
     .previous-page-btn,
     .next-page-btn {
         height: 36px;
         width: 36px;
-    }
-
-    .home-page-section h3,
-    .genre-and-search-section h3 {
-        font-size: 37px;
-    }
-
-    .home-page-section ul li,
-    .genre-and-search-section ul li {
-        font-size: 18px;
     }
 }
 
@@ -375,6 +373,10 @@
 
     .main-header p {
         font-size: 22px;
+    }
+
+    nav ul li {
+        padding: 2%;
     }
 
     .go-to-page-container form input {
@@ -388,19 +390,32 @@
     .arrow-btn.next-btn {
         right: -13%;
     }
-
-    .navigation-bar .navigation-categories .genre-button {
-        padding: 2%;
-    }
 }
 
 @media (max-width: 360px) {
-    .home-page-section ul {
-        gap: 5px;
+    .home-page-section h3,
+    .genre-and-search-section h3 {
+        font-size: 35px;
     }
 
-    .navigation-bar .container {
+    nav .container {
         gap: 15px;
+    }
+
+    .home-button i {
+        font-size: 17px;
+    }
+
+    .search-form input {
+        width: 270px;
+    }
+
+    .search-form .submit-search {
+        font-size: 17px;
+    }
+
+    .home-page-section ul {
+        gap: 5px;
     }
 
     .arrow-btn {
@@ -415,43 +430,32 @@
     .arrow-btn.next-btn {
         right: -10%;
     }
+}
 
-    .search-form input {
-        width: 270px;
-    }
-
-    .search-form .submit-search {
-        font-size: 17px;
-    }
-
-    .home-button i {
-        font-size: 17px;
+@media (max-width: 340px) {
+    nav .container {
+        gap: 15px;
     }
 
     .home-page-section h3,
     .genre-and-search-section h3 {
-        font-size: 35px;
-    }
-}
-
-@media (max-width: 340px) {
-    .poster {
-        width: 120px;
-        height: 156px;
-    }
-
-    .search-form input {
-        width: 250px;
+        font-size: 33px;
     }
 
     .home-page-section ul {
         gap: 5px;
     }
 
-    .navigation-bar .container {
-        gap: 15px;
+    .home-page-section ul li,
+    .genre-and-search-section ul li {
+        font-size: 16px;
+
     }
-    
+
+    .search-form input {
+        width: 250px;
+    }
+
     .go-to-page-container form input {
         width: 95px;
         height: 34px;
@@ -462,6 +466,11 @@
         height: 17px;
     }
 
+    .poster {
+        width: 120px;
+        height: 156px;
+    }
+    
     .previous-page-btn,
     .next-page-btn {
         height: 34px;
@@ -479,15 +488,5 @@
 
     .arrow-btn.next-btn {
         right: -10%;
-    }
-
-    .home-page-section h3,
-    .genre-and-search-section h3 {
-        font-size: 33px;
-    }
-
-    .home-page-section ul li,
-    .genre-and-search-section ul li {
-        font-size: 16px;
     }
 }

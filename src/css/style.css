@@ -11,17 +11,6 @@ a {
     color: #422222;
 }
 
-.top-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-image: url(../images/header-background.png);
-    color: #fff;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 .top-header h1 {
     font-weight: 700;
@@ -29,10 +18,42 @@ a {
     text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.87);
 }
 
+.main-header h2 {
+    font-size: 80px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.home-page-section h3,
+.genre-and-search-section h3 {
+    font-size: 50px;
+    align-self: flex-start;
+    padding: 3% 0 1%;
+    display: inline-block;
+    color: #422222;
+}
+
+.home-page-section h3 { 
+    cursor: pointer;
+}
+
+.home-page-section h3:hover {
+    opacity: 0.7;
+}
+
 .top-header p {
     font-weight: 700;
     font-size: 30px;
     text-shadow: 0px 2px 2px #000000;
+}
+
+.main-header p {
+    font-size: 30px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 6% 1% 6%;
+    border-bottom: 0.3px solid rgba(99, 68, 54, 0.7);
+    box-shadow: 0 6px 6px -6px rgba(99, 68, 54, 1);
 }
 
 .top-header a {
@@ -53,56 +74,73 @@ a {
     transition: ease-in-out 0.3s;
 } 
 
-#main {
-    background-image: linear-gradient(#D9C4BB, #946D5B);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+.search-form, 
+.go-to-page-container form {
+    position: relative;
 }
 
-.main-header {
-    padding-top: 3%;
-    text-align: center;
-    font-weight: 700;
+.search-form input,
+.go-to-page-container form input {
+    font-size: 14px;
+    font-weight: 300;
+    padding: 4%;
+    border: 0.5px solid #8A776F;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
+    background-color: inherit;
+    border-radius: 12px;
+}
+
+.search-form input {
+    width: 350px;
+}
+
+.go-to-page-container form input {
+    width: 142px;
+    height: 45px;
+}
+
+.search-form input::-webkit-input-placeholder, 
+.go-to-page-container input::-webkit-input-placeholder {
     color: #422222;
-    width: 90%;
-    /* width: 100%; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-family: 'Bellota Text', cursive;
 }
 
-.main-header h2 {
-    font-size: 80px;
-    display: inline-block;
+.search-form .submit-search,
+.go-to-page-container .submit-search {
+    border: none;
+    background-color: inherit;
+    position: absolute;
+    top: 25%;
+    bottom: 25%;
     cursor: pointer;
-}
-
-.main-header p {
-    font-size: 30px;
-    cursor: pointer;
-    display: inline-block;
-    padding: 0 6% 1% 6%;
-    border-bottom: 0.3px solid rgba(99, 68, 54, 0.7);
-    box-shadow: 0 6px 6px -6px rgba(99, 68, 54, 1);
-}
-
-.navigation-bar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     color: #422222;
-    padding-top: 20px;
-    gap: 30px;
-    width: 100%;
 }
 
-.navigation-bar .container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.search-form .submit-search {
+    right: 5%;
 }
+
+.go-to-page-container .submit-search {
+    right: 7%;
+    height: 20px;
+}
+
+.go-to-page-container .submit-search img {
+    height: 100%;
+}
+
+.search-form .submit-search:hover,
+.go-to-page-container .submit-search:hover {
+    opacity: 0.8;
+    transform: scale(1.2);
+    transition: ease-in-out 0.3s;
+}
+
+.search-form .submit-search:hover {
+    transform: scale(1.2) rotate(90deg);
+}
+
 
 .home-button {
     color: #422222;
@@ -117,45 +155,107 @@ a {
     opacity: 0.9;
 }
 
-.search-form {
-    position: relative;
+.arrow-btn {
+    width: 26px;
+    height: 52px;
+    position: absolute;
+    cursor: pointer;
 }
 
-.search-form input {
-    font-size: 14px;
-    font-weight: 300;
-    padding: 4%;
+.arrow-btn.previous-btn {
+    left: -4%;
+}
+
+.arrow-btn.next-btn {
+    right: -4%;
+}
+
+.arrow-btn:hover {
+    transform: scale(1.2);
+    transition: ease-in-out 0.3s;
+    opacity: 0.7;
+}
+
+.previous-page-btn,
+.next-page-btn {
+    height: 45px;
+    width: 45px;
     border: 0.5px solid #8A776F;
     box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
     background-color: inherit;
     border-radius: 12px;
-    width: 350px;
-}
-
-.search-form input::-webkit-input-placeholder {
-    color: #422222;
-    font-family: 'Bellota Text', cursive;
-}
-
-.search-form .submit-search {
-    border: none;
-    background-color: inherit;
-    position: absolute;
-    right: 5%;
-    top: 25%;
-    bottom: 25%;
     cursor: pointer;
+}
+
+.go-to-page-container img {
+    height: 22px;
+}
+
+.go-to-page-container .previous-page-btn img {
+    transform: rotate(180deg);
+}
+
+.previous-page-btn:hover, 
+.next-page-btn:hover {
+    transform: scale(1.02);
+    transition: ease-in-out 0.1s;
+}
+
+.go-to-page-container.bottom form input,
+.go-to-page-container.bottom .previous-page-btn,
+.go-to-page-container.bottom .next-page-btn {
+    border: 0.5px solid #422222;
+}
+
+
+.top-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(../images/header-background.png);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#main {
+    background-image: linear-gradient(#D9C4BB, #946D5B);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-header {
+    padding-top: 3%;
+    text-align: center;
+    font-weight: 700;
     color: #422222;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.search-form .submit-search:hover {
-    opacity: 0.8;
-    transform: scale(1.2) rotate(90deg);
-    transition: ease-in-out 0.3s;
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #422222;
+    padding-top: 20px;
+    gap: 30px;
+    width: 100%;
 }
 
-/* REFATORAR DEPOIS DE DECIDIDO COMO VAI FICAR ESSA NAVEGACAO  */
-.navigation-bar .navigation-categories {
+nav .container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav ul {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,7 +264,7 @@ a {
     flex-wrap: wrap;
 }
 
-.navigation-bar .navigation-categories .genre-button {
+nav ul li {
     background: #D4C1B9;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
     border-radius: 12px;
@@ -172,19 +272,18 @@ a {
     cursor: pointer;
 }
 
-.navigation-bar .navigation-categories .genre-button.active {
+nav ul li.active {
     background-color: #B08C7D;
     color: #fff;
     transition: 0.3s;
 }
 
-.navigation-bar .navigation-categories .genre-button:hover,
-.navigation-bar .navigation-categories .genre-button.active:hover {
+nav ul li:hover,
+nav ul li.active:hover {
     background-color: #E2B09B;
     transition: 0.3s;
 }
 
-/* -------- FIM NAVIGATION BAR - REFATORAR -------- */
 
 .home-page-section {
     display: flex;
@@ -195,33 +294,29 @@ a {
     gap: 30px;
 }
 
-.home-page-section h3,
-.genre-and-search-section h3 {
-    font-size: 50px;
-    align-self: flex-start;
-    padding: 3% 0 1%;
-    display: inline-block;
-    color: #422222;
+.genre-and-search-section {
+    max-width: 90%;
 }
 
-.home-page-section h3 { 
-    cursor: pointer;
-}
-
-.home-page-section h3:hover {
-    opacity: 0.7;
-}
-
-.home-page-section ul {
-    display: flex;
-    flex-wrap: wrap;
+.home-page-section ul,
+.titles-container {
     align-items: center;
     justify-content: space-between;
     gap: 14px;
     position: relative;
 }
 
-/* FALTA O BOTAO */
+.home-page-section ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.titles-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(4, auto);
+}
+
 .home-page-section ul li,
 .genre-and-search-section ul li {
     color: #fff;
@@ -241,11 +336,6 @@ a {
     box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.5);
 }
 
-.animate {
-    animation-name: fade-in;
-    animation-duration: 1s;
-}
-
 .poster::after {
     content: '';
     position: absolute;
@@ -261,18 +351,6 @@ a {
     border-radius: 12px;
     opacity: 0;
     transition: ease-in-out 0.3s;
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-        scale: 0.9;
-    }
-
-    to {
-        opacity: 1;
-        scale: 1;
-    }
 }
 
 .year {
@@ -301,58 +379,10 @@ a {
     opacity: 1;
 }
 
-/* VER COMO REFATORAR OS BOTOES DEPENDENDO DE COMO VAO SER OS BOTOES DAS SECOES POR GENERO. SE FOREM IGUAIS, DA PRA DEIXAR SO PREVIOUS-BTN, NEXT-BTN */
-.arrow-btn {
-    width: 26px;
-    height: 52px;
-    position: absolute;
-    cursor: pointer;
-}
-
-.arrow-btn.previous-btn {
-    left: -4%;
-}
-
-.arrow-btn.next-btn {
-    right: -4%;
-}
-
-.arrow-btn:hover {
-    transform: scale(1.2);
-    transition: ease-in-out 0.3s;
-    opacity: 0.7;
-}
-
-/* FINAL BOTOES - REFATORAR */
-
-.genre-and-search-section {
-    max-width: 90%;
-}
-
 .by-genre-container {
     display: flex;
     flex-direction: column;
     padding: 3% 0;
-}
-
-.genre-and-search-section ul {
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px;
-    position: relative;
-}
- /* JUNTAR ISSO AQUI LA ONDE TEM AS COISAS DA OUTRA SECAO ACHO */
-.titles-container {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-template-rows: repeat(4, auto);
-}
-
-.not-found-message {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10%;
 }
 
 .by-genre-header {
@@ -368,79 +398,17 @@ a {
     color: #422222;
 }
 
-.go-to-page-container form {
-    position: relative;
+.go-to-page-container.bottom { 
+    justify-content: flex-end;
+    padding: 2% 0;
 }
 
-.go-to-page-container form input {
-    font-size: 14px;
-    font-weight: 300;
-    padding: 4%;
-    width: 142px;
-    height: 45px;
-    border: 0.5px solid #8A776F;
-    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
-    background-color: inherit;
-    border-radius: 12px;
+.not-found-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
 }
-
-.go-to-page-container input::-webkit-input-placeholder {
-    color: #422222;
-    font-family: 'Bellota Text', cursive;
-}
-.go-to-page-container .submit-search {
-    border: none;
-    background-color: inherit;
-    position: absolute;
-    right: 7%;
-    top: 25%;
-    bottom: 25%;
-    cursor: pointer;
-    height: 20px;
-}
-
-.go-to-page-container .submit-search img {
-    height: 100%;
-}
-
-.go-to-page-container .submit-search:hover {
-    opacity: 0.8;
-    transform: scale(1.2);
-    transition: ease-in-out 0.3s;
-}
-
-.previous-page-btn,
-.next-page-btn {
-    height: 45px;
-    width: 45px;
-    border: 0.5px solid #8A776F;
-    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
-    background-color: inherit;
-    border-radius: 12px;
-    cursor: pointer;
-}
-
-.go-to-page-container img {
-    height: 22px;
-}
-
-.go-to-page-container.bottom form input,
-.go-to-page-container.bottom .previous-page-btn,
-.go-to-page-container.bottom .next-page-btn {
-    border: 0.5px solid #422222;
-}
-
-/* ARRUMAR ISSO AQUI */
-.go-to-page-container .previous-page-btn img {
-    transform: rotate(180deg);
-}
-
-.previous-page-btn:hover, 
-.next-page-btn:hover {
-    transform: scale(1.02);
-    transition: ease-in-out 0.1s;
-}
-/* ---- PRA REFATORAÇAO -- OS FORM INPUTS TAO IGUAIS!!! e os submit search também ------- */
 
 .inactive {
     opacity: 0.5;
@@ -453,16 +421,37 @@ a {
     transition: none;
 }
 
-.go-to-page-container.bottom { 
-    justify-content: flex-end;
-    padding: 2% 0;
-}
-
 .hide {
     display: none;
 }
 
-/* -------------------- ANIMATION --------------------- */
+
+footer {
+    background-color: #946D5B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1% 0 3%;
+}
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        scale: 0.9;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+.animate {
+    animation-name: fade-in;
+    animation-duration: 1s;
+}
+
 [data-anime] {
     opacity: 0;
     transition: 1s;
@@ -473,15 +462,4 @@ a {
 [data-anime].animate {
     opacity: 1;
     transform: translate3d(0px, 0px, 0px);
-}
-
-
-/* ------------------ FOOTER ----------------- */
-footer {
-    background-color: #946D5B;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1% 0 3%;
 }
