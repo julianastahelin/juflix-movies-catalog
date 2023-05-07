@@ -327,6 +327,18 @@
 }
 
 @media (max-width: 426px) {
+    .top-header h1 {
+        font-size: 100px;
+    }
+
+    .top-header p {
+        font-size: 25px;
+    }
+
+    .top-header a {
+        font-size: 35px;
+    }
+
     .home-page-section h3,
     .genre-and-search-section h3 {
         font-size: 37px;
@@ -366,7 +378,7 @@
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 376px) {
     .main-header h2 {
         font-size: 73px;
     }
@@ -383,6 +395,12 @@
         width: 110px;
     }
 
+    .home-page-section h3,
+    .genre-and-search-section h3 {
+        font-size: 34px;
+        letter-spacing: 0.9px;
+    }
+
     .arrow-btn.previous-btn {
         left: -13%;
     }
@@ -393,11 +411,6 @@
 }
 
 @media (max-width: 360px) {
-    .home-page-section h3,
-    .genre-and-search-section h3 {
-        font-size: 35px;
-    }
-
     nav .container {
         gap: 15px;
     }

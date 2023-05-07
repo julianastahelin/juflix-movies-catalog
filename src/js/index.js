@@ -106,30 +106,30 @@ const genreAndSearchSection = document.querySelector('.genre-and-search-section'
 const pageNumberContainer = document.querySelectorAll('.go-to-page-container');
 
 const genresNavButtons = [
-    document.getElementById('top-rated-movies'), 
-    document.getElementById('action'), 
-    document.getElementById('animation'), 
-    document.getElementById('comedy'), 
-    document.getElementById('documentary'), 
-    document.getElementById('drama'), 
-    document.getElementById('mystery'), 
-    document.getElementById('romance') ];
+    document.getElementById('top-rated-movies'),
+    document.getElementById('action'),
+    document.getElementById('animation'),
+    document.getElementById('comedy'),
+    document.getElementById('documentary'),
+    document.getElementById('drama'),
+    document.getElementById('mystery'),
+    document.getElementById('romance')];
 
 const homePageSectionTitles = [
-    document.getElementById('top-rated-movies-title'), 
-    document.getElementById('action-title'), 
-    document.getElementById('animation-title'), 
-    document.getElementById('comedy-title'), 
-    document.getElementById('documentary-title'), 
-    document.getElementById('drama-title'), 
-    document.getElementById('mystery-title'), 
-    document.getElementById('romance-title') ];
+    document.getElementById('top-rated-movies-title'),
+    document.getElementById('action-title'),
+    document.getElementById('animation-title'),
+    document.getElementById('comedy-title'),
+    document.getElementById('documentary-title'),
+    document.getElementById('drama-title'),
+    document.getElementById('mystery-title'),
+    document.getElementById('romance-title')];
 
-const titleGenres = [ 'Top rated movies', 'Action', 'Animation', 'Comedy', 'Documentary', 'Drama', 'Mystery', 'Romance' ];
+const titleGenres = ['Top rated movies', 'Action', 'Animation', 'Comedy', 'Documentary', 'Drama', 'Mystery', 'Romance'];
 
-const namesHomeSection = [ 'name-top-rated-movie', 'name-action', 'name-animation', 'name-comedy', 'name-documentary', 'name-drama', 'name-mystery', 'name-romance' ]
-const yearsHomeSection = [ 'year-top-rated-movie', 'year-action', 'year-animation', 'year-comedy', 'year-documentary', 'year-drama', 'year-mystery', 'year-romance' ]
-const postersHomeSection = [ 'poster-top-rated-movie', 'poster-action', 'poster-animation', 'poster-comedy', 'poster-documentary', 'poster-drama', 'poster-mystery', 'poster-romance' ]
+const namesHomeSection = ['name-top-rated-movie', 'name-action', 'name-animation', 'name-comedy', 'name-documentary', 'name-drama', 'name-mystery', 'name-romance']
+const yearsHomeSection = ['year-top-rated-movie', 'year-action', 'year-animation', 'year-comedy', 'year-documentary', 'year-drama', 'year-mystery', 'year-romance']
+const postersHomeSection = ['poster-top-rated-movie', 'poster-action', 'poster-animation', 'poster-comedy', 'poster-documentary', 'poster-drama', 'poster-mystery', 'poster-romance']
 
 var fetchedMoviesHomeSection = [];
 let nextMovies;
@@ -200,11 +200,11 @@ nextMoviesButtonIds.forEach((buttonId, index) => {
             document.getElementById(previousMoviesButtonIds[index]).classList.remove('inactive');
             pageByGenre[index]++
             getMoviesHomePage(pageByGenre[index], titleGenres[index], namesHomeSection[index], yearsHomeSection[index], postersHomeSection[index])
-            .then(() => {
-                if (nextMovies === null) {
-                    document.getElementById(buttonId).classList.add('inactive');
-                }
-            })
+                .then(() => {
+                    if (nextMovies === null) {
+                        document.getElementById(buttonId).classList.add('inactive');
+                    }
+                })
         }
     })
 })
@@ -216,7 +216,7 @@ previousMoviesButtonIds.forEach((buttonId, index) => {
         } else {
             pageByGenre[index]--
             getMoviesHomePage(pageByGenre[index], titleGenres[index], namesHomeSection[index], yearsHomeSection[index], postersHomeSection[index])
-            .then(document.getElementById(nextMoviesButtonIds[index]).classList.remove('inactive'));
+                .then(document.getElementById(nextMoviesButtonIds[index]).classList.remove('inactive'));
         }
         if (pageByGenre[index] === 1) {
             document.getElementById(buttonId).classList.add('inactive');
@@ -297,11 +297,12 @@ async function getMoviesGenreAndSearch(origin, genre, page) {
     let movies = await response.json();
     document.querySelector('.not-found-message').classList.add('hide');
     document.querySelector('.titles-container').classList.remove('hide');
-    if(checkForPageEntries(movies.entries)) {
-    fillMoviesInfosGenreAndSearch(movies.results, movies.entries)
-        .then(showGenreAndSearchSection())
-        .then(animateMovies(genreAndSearchSection))
-        .then(checkForNextPage(movies.next));
+    if (checkForPageEntries(movies.entries)) {
+        fillMoviesInfosGenreAndSearch(movies.results, movies.entries)
+            .then(showGenreAndSearchSection())
+            .then(animateMovies(genreAndSearchSection))
+            .then(checkForNextPage(movies.next))
+            .then(checkForPreviousPage(page))
     }
 }
 
@@ -424,6 +425,18 @@ function checkForNextPage(nextPage) {
     }
 }
 
+function checkForPreviousPage(page) {
+    if (page === 1) {
+        previousPageBtn.forEach((btn) => {
+            btn.classList.add('inactive');
+        });
+    } else {
+        previousPageBtn.forEach((btn) => {
+            btn.classList.remove('inactive');
+        })
+    }
+}
+
 function adjustNumberOfSlots(numberOfMovies, numberOfSlots, stringName, stringYear, stringPoster) {
     if (numberOfMovies < numberOfSlots) {
         let emptySlots = numberOfSlots - numberOfMovies
@@ -448,9 +461,9 @@ function checkMovieSlots(width) {
     } else {
         titleInfoSlots = 4;
     }
-        titleGenres.forEach((title, index) => {
-            getMoviesHomePage(pageByGenre[index], title, namesHomeSection[index], yearsHomeSection[index], postersHomeSection[index]);
-        })
+    titleGenres.forEach((title, index) => {
+        getMoviesHomePage(pageByGenre[index], title, namesHomeSection[index], yearsHomeSection[index], postersHomeSection[index]);
+    })
 }
 
 const width = window.matchMedia("(max-width: 660px)")

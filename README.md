@@ -16,7 +16,7 @@
 <h4>Desktop</h4>
 <a href="https://julianastahelin.github.io/juflix-movies-catalog/"><img src="design/design-desktop.gif" alt="gif of project being displayed and used on desktop"></a>
 <h4>Tablet</h4>
-<a href="https://julianastahelin.github.io/juflix-movies-catalog/"><img src="design/design-tablet.png" alt="image showing project on mobile size" style="width: 80%;"></a>
+<a href="https://julianastahelin.github.io/juflix-movies-catalog/"><img src="design/design-tablet.gif" alt="gif showing project on tablet" style="width: 80%;"></a>
 <h4>Mobile</h4>
 <a href="https://julianastahelin.github.io/juflix-movies-catalog/"><img src="design/design-mobile.gif" alt="gif of project displayed on mobile" style="width: 30%;"></a>
 
@@ -36,13 +36,14 @@
     <li>Vanilla Javascript.</li>
 </ul>
 
-<h3>What I practiced 💪🏽</h3>
+<h3>What I learned and practiced 💪🏽</h3>
 <ul>
-    <li>Consuming API using fetch(?);</li>
-    <li>Multiple iterations on Javascript;</li>
+    <li>Consuming API - fetch;</li>
+    <li>Multiple iterations on JS;</li>
     <li>Transitions and animations with CSS and JS;</li>
     <li>Adding a search input that generates a new fetch;</li>
-    <li>Sliding through different pages with content change - escrever melhor;</li>
-    <li>Code refactoring.</li>
-    <li>Reading documentation</li>
+    <li>Page responsiveness - CSS Media Queries and JS matchMedia();</li>
+    <li>Changing HTML content with JS;</li>
+    <li>Code refactoring;</li>
+    <li>Reading documentation.</li>
 </ul> 
