@@ -165,7 +165,7 @@ async function getMoviesHomePage(page, genre, nameMovie, yearMovie, posterMovie)
         if (movie.primaryImage) {
             var poster = movie.primaryImage.url;
         } else {
-            var poster = '../images/poster-unavailable.png';
+            var poster = 'src/images/poster-unavailable.png';
         }
         fetchedMoviesHomeSection.push(new FetchedMovie(name, year, poster));
     })
@@ -311,7 +311,7 @@ async function fillMoviesInfosGenreAndSearch(moviesInfos, numberOfMovies) {
     moviesInfos.forEach((movie, index) => {
         namesGenreSearch[index].innerHTML = "";
         yearsGenreSearch[index].innerHTML = "";
-        postersGenreSearch[index].style.backgroundImage = "url('../images/poster-unavailable.png')";
+        postersGenreSearch[index].style.backgroundImage = "url('src/images/poster-unavailable.png')";
         if (movie.titleText.text) {
             namesGenreSearch[index].innerHTML = movie.titleText.text;
             if (movie.titleText.text.length > 47) {
